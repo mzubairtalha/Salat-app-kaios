@@ -1,0 +1,362 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
+    <title>My Salat</title>
+    <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" />
+    <link href="css/ios-theme.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+<script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/app.js" defer></script>
+    <script src="js/app2.js" defer></script>
+</head>
+<body>
+    <div data-role="page" id="deshboard" class="all-background">
+        <div data-role="header" data-position="fixed">
+            <a href="#" data-icon="home" data-iconpos="notext"></a>
+            <h1 class="title-text">
+                Homepage</h1>
+            <a href="#DeveloperInfo" id="btnInfo" data-icon="info"  data-iconpos="notext">
+            </a>
+        </div>
+        <div data-role="main" class="ui-content">
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <div class="ui-bar">
+                        <a href="#Prayer" >
+                            <img src="images/deshboard/prayer.png" alt="Namazer somoy and direction">
+                        </a>
+                        <div class="imgCaption">
+                            Prayer</div>
+                    </div>
+                </div>
+                <div class="ui-block-b">
+                    <div class="ui-bar">
+                        <a href="#MosqueSearch" >
+                            <img src="images/deshboard/mosque.png" alt="Search for nearest mosjid">
+                        </a>
+                        <div class="imgCaption">
+                            Search Masjid</div>
+                    </div>
+                </div>
+                <div class="ui-block-a">
+                    <div class="ui-bar">
+                        <a href="#Tasbeeh" >
+                            <img src="images/deshboard/tasbih.png" alt="Count jikir in tasbih">
+                        </a>
+                        <div class="imgCaption">
+                            Tasbeeh</div>
+                    </div>
+                </div>
+                <div class="ui-block-b">
+                    <div class="ui-bar">
+                        <a href="#Settings" >
+                            <img src="images/deshboard/settings.png" alt="Settings">
+                        </a>
+                        <div class="imgCaption">
+                            Settings</div>
+                    </div>
+                </div>
+            </div>
+            <!-- /grid-a -->
+        </div>
+    </div>
+    <div data-role="page" id="Prayer" class="all-background">
+        <div data-role="header" data-position="fixed">
+            <a href="#deshboard" data-icon="back" data-iconpos="notext" 
+                ></a>
+            <h1 class="title-text">
+                Prayer Info</h1>
+            <a href="#DeveloperInfo" data-icon="info"  data-iconpos="notext">
+            </a>
+        </div>
+        <div data-role="main" class="ui-content" data-inset="true">
+            <ul data-role="listview">
+                <li id="clickme"><a href="#prayerTime" >
+                    <img style="margin-top: 10px; margin-left: 10px;" src="images/prayer/time.png" />
+                    <h1 class="list-p" style="margin-left: -15px;margin-top:20px;">
+                        Prayer Time</h1>
+                </a></li>
+                <li><a href="#prayerDirection">
+                    <img style="margin-top: 10px; margin-left: 10px;" src="images/prayer/compass.png" />
+                    <h1 class="list-p" style="margin-left: -15px;margin-top:20px;">
+                        Prayer Direction</h1>
+                </a></li>
+            </ul>
+            <div id="myPopupDiv" data-role="popup" data-theme="b">
+                ...popup contents go here...
+            </div>
+        </div>
+    </div>
+    <div data-role="page" id="prayerTime" class="all-background">
+        <div data-role="header" data-position="fixed">
+            <a href="#Prayer" data-icon="back" data-iconpos="notext"  >
+            </a>
+            <h1 class="title-text">
+                Prayer Time</h1>
+            <a href="#" id="loc" data-icon="refresh" data-iconpos="notext"></a>
+        </div>
+        <div data-role="main" class="ui-content">
+            <ul id="timeList" data-role="listview">
+            </ul>
+            <div id="prayerPopup" data-role="popup" data-theme="b">
+                ...popup contents go here...
+            </div>
+        </div>
+        <div data-role="footer" id="prayerTimeFooter" class="ui-bar" data-position="fixed">
+        </div>
+    </div>
+    <div data-role="page" id="prayerDirection" class="all-background">
+        <div data-role="header" data-position="fixed">
+            <a href="#Prayer" data-icon="back" data-iconpos="notext"  >
+            </a>
+            <h1 class="title-text">
+                Kibla Direction</h1>
+            <a href="#" id="dirRefresh" data-icon="refresh" data-iconpos="notext"></a>
+        </div>
+        <div data-role="main" class="ui-content">
+            <div id="imgKibla" class="compass-img">
+            </div>
+        </div>
+    </div>
+    <div data-role="page" id="MosqueSearch" class="all-background">
+        <div data-role="header" data-position="fixed">
+            <a href="#deshboard" data-icon="back" data-iconpos="notext" 
+                ></a>
+            <h1 class="title-text">
+                Search Masjid</h1>
+            <a href="#" id="masjidRefresh" data-icon="refresh" data-iconpos="notext"></a>
+        </div>
+        <div data-role="main" class="ui-content" id="Masjid">
+            <form class="ui-filterable">
+            <input id="myFilter" data-type="search" style="margin-left: 20px;" placeholder="Search for Masjids..">
+            </form>
+            <ul id="maqueList" data-filter="true" data-role="listview" data-input="#myFilter">
+            </ul>
+        </div>
+    </div>
+    <div data-role="page" id="MosqueMap" class="all-background">
+        <div data-role="header" data-position="fixed">
+            <a href="#MosqueSearch" data-icon="back" data-iconpos="notext" 
+                ></a>
+            <h1 class="title-text">
+                Masjid Map</h1>
+            <a href="#" id="mapRefresh" data-icon="refresh" data-iconpos="notext"></a>
+        </div>
+        <div data-role="content" class="ui-content" id="content">
+            <iframe src="" id="msoquemap" seamless></iframe>
+        </div>
+    </div>
+    <div data-role="page" id="Tasbeeh" class="all-background">
+        <div data-role="header" data-position="fixed">
+            <a href="#deshboard" data-icon="back" data-iconpos="notext" 
+                ></a>
+            <h1 class="title-text">
+                Tasbeeh</h1>
+            <a href="#popupLogin" data-rel="popup" data-position-to="window" id="mapRefresh"
+                data-transition="pop" data-icon="plus" data-iconpos="notext"></a>
+        </div>
+        <div data-role="content" class="ui-content" id="MyTasbih">
+            <form class="ui-filterable">
+            <input id="myFilter1" data-type="search" style="margin-left: 20px;" placeholder="Search for Tasbih..">
+            </form>
+            <ul id="tbsList" data-role="listview" data-split-icon="delete" data-split-theme="d"
+                data-inset="true">
+            </ul>
+        </div>
+        <div data-role="popup" id="popupLogin" data-theme="b">
+            <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete"
+                data-iconpos="notext" class="ui-btn-right">Close</a>
+            <form>
+            <div style="padding: 10px 20px;">
+                <h3>
+                    Add New Counter</h3>
+                <label for="un" class="ui-hidden-accessible">
+                    Tabih Name:</label>
+                <input type="text" name="user" id="tasbihName" value="" placeholder="Tasbih" data-theme="a">
+                <label for="un" class="ui-hidden-accessible">
+                    Init Count:</label>
+                <input type="text" name="user" id="tasbihCount" value="0" data-theme="a">
+                <button type="button" id="tasbihSubmit" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check">
+                    Create</button>
+            </div>
+            </form>
+        </div>
+    </div>
+    <div data-role="page" id="TasbeehCount">
+        <div data-role="header" data-position="fixed">
+            <a href="#" id="tasbihClickBack" data-icon="back" data-iconpos="notext" 
+                ></a>
+            <h1 class="title-text" role="heading" id="countHeader">
+            </h1>
+            <a href="#" id="ResetCount" data-icon="refresh" data-iconpos="notext">Reload</a>
+            <!-- <a id="A2" href="#popupDialog" data-rel="popup" data-position-to="window" data-icon="delete" data-iconpos="notext"></a>-->
+        </div>
+        <div data-role="content" class="ui-content" id="tasb">
+            <div style="position: absolute;" id="CountMe">
+                <div class="ui-bar ui-corner-all ui-shadow">
+                    <div id="btnTotal" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                        <!-- <a href="#" id="ResetCount" data-role="button" data-theme="b" data-icon="refresh" data-iconpos="notext" class="ui-btn-right" style="margin-top: -3px; margin-right: -3px;">Reload</a>-->
+                        <p id="countTotal">
+                            0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-role="footer" id="Div2" class="ui-bar" data-position="fixed">
+            <table style="width: 100%">
+                <tr>
+                    <td style="width: 40%; text-align: center">
+                        <a href="#" id="countPlus">
+                            <img src="images/plus.png" /></a>
+                    </td>
+                    <td style="width: 10%">
+                        <div class="divide">
+                        </div>
+                    </td>
+                    <td style="width: 40%; text-align: center">
+                        <a href="#" id="countMinus">
+                            <img src="images/minus.png" /></a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div data-role="page" id="Settings" class="all-background">
+        <div data-role="header" data-position="fixed">
+            <a href="#deshboard" id="A1" data-icon="back" data-iconpos="notext" 
+                ></a>
+            <h1 class="title-text" role="heading" id="H1">
+                Settings</h1>
+            <a href="#DeveloperInfo" id="A2" data-icon="info"  data-iconpos="notext">
+                Reload</a>
+            <!-- <a id="A2" href="#popupDialog" data-rel="popup" data-position-to="window" data-icon="delete" data-iconpos="notext"></a>-->
+        </div>
+        <div data-role="content" class="ui-content" id="Div3">
+            <fieldset data-theme="b" data-role="controlgroup">
+                <legend class="title-text" style="color: #000">Select Search Radio :</legend>
+                <input type="radio" name="radio-choice-1" id="radio-choice-1" value="1000" checked="checked">
+                <label for="radio-choice-1" class="title-text">
+                    1000</label>
+                <input type="radio" name="radio-choice-1" id="radio-choice-2" value="2000">
+                <label for="radio-choice-2" class="title-text">
+                    2000</label>
+                <input type="radio" name="radio-choice-1" id="radio-choice-3" value="5000">
+                <label for="radio-choice-3" class="title-text">
+                    5000</label>
+                <input type="radio" name="radio-choice-1" id="radio-choice-4" value="10000">
+                <label for="radio-choice-4" class="title-text">
+                    10000</label>
+            </fieldset>
+            <fieldset data-theme="b" data-role="controlgroup">
+                <legend class="title-text" style="color: #000">Clear Cache:</legend>
+                <input type="checkbox" name="checkbox-1a" id="checkbox-1a" checked="">
+                <label for="checkbox-1a" class="title-text">
+                    Prayer Time</label>
+                <input type="checkbox" name="checkbox-2a" id="checkbox-2a">
+                <label for="checkbox-2a" class="title-text">
+                    Prayer Direction</label>
+                <input type="checkbox" name="checkbox-3a" id="checkbox-3a">
+                <label for="checkbox-3a" class="title-text">
+                    Mosque List</label>
+                <input type="checkbox" name="checkbox-4a" id="checkbox-4a">
+                <label for="checkbox-4a" class="title-text">
+                    Direction Map</label>
+            </fieldset>
+            <div>
+                <table style="width: 100%;">
+                    <tr>
+                        <td style="width: 34%; visibility: hidden">
+                            <input type="button" class="ui-btn" data-theme="b" value="Clear Cache">
+                        </td>
+                        <td style="width: 66%;">
+                            <div class="ui-input-btn ui-btn ui-corner-all ui-shadow" style="color: white; font-weight: normal;">
+                                Clear Cache
+                                <input type="button" id="CacheClear" class="title-text" data-enhanced="true" value="Input value">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+   
+<script>
+        // JavaScript code for D-pad navigation
+        // Get all interactive elements
+        const interactiveElements = document.querySelectorAll("deshboard, btnInfo, Prayer, DeveloperInfo, prayerTime, prayerDirection, myPopupDiv, timeList, prayerPopup, prayerTimeFooter, dirRefresh, imgKibla, MosqueSearch, masjidRefresh, myFilter, maqueList, MosqueMap, mapRefresh, msoquemap, Tasbeeh, popupLogin, tasbihName, tasbihCount, tasbihSubmit, MyTasbih, myFilter1, tbsList, tasbihClickBack, ResetCount, countHeader, CountMe, btnTotal, countTotal, Div2, countPlus, countMinus, Settings, A1, H1, radio-choice-1, radio-choice-2, radio-choice-3, radio-choice-4, checkbox-1a, checkbox-2a, checkbox-3a, checkbox-4a, CacheClear, A2, A2");
+
+        // Initialize the focused element index
+        let focusedElementIndex = 0;
+
+        // Function to handle D-pad navigation
+        function handleDpadNavigation(event) {
+            // Check if the key event is an arrow key
+            if (event.key.startsWith("Arrow")) {
+                event.preventDefault();
+
+                // Remove focus from the currently focused element
+                interactiveElements[focusedElementIndex].blur();
+
+                // Update the focused element index based on the arrow key
+                if (event.key === "ArrowUp" || event.key === "ArrowLeft") {
+                    focusedElementIndex = (focusedElementIndex - 1 + interactiveElements.length) % interactiveElements.length;
+                } else if (event.key === "ArrowDown" || event.key === "ArrowRight") {
+                    focusedElementIndex = (focusedElementIndex + 1) % interactiveElements.length;
+                }
+
+                // Set focus on the new focused element
+                interactiveElements[focusedElementIndex].focus();
+            } else if (event.key === "Enter") {
+                // Handle the "Enter" key action
+                // You can define the action to be taken when "Enter" is pressed here
+                // For example, trigger a button click or perform a specific action
+                // You can add your custom logic here
+                if (interactiveElements[focusedElementIndex].tagName === "BUTTON") {
+                    interactiveElements[focusedElementIndex].click();
+                }
+            }
+        }
+
+        // Add an event listener to handle D-pad navigation and the "Enter" key
+        document.addEventListener("keydown", handleDpadNavigation);
+
+        // Add event listener for the submit button
+        document.getElementById("sendButton").addEventListener("click", function() {
+            var suggestion = document.getElementById("suggestion").value;
+            var emailAddress = "kaiosappsuggestions@gmail.com";
+            var subject = "Add love poetry";
+
+            var mailtoLink = "mailto:" + emailAddress + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(suggestion);
+
+            window.location.href = mailtoLink;
+        });
+        
+  document.addEventListener("keydown", handleKeyDown);
+  document.addEventListener("DOMContentLoaded", () => {
+    // getKaiAd( config )
+    getKaiAd({
+        publisher: 'da08737d-861e-4ebe-bbbb-8fb90d004d39',
+        app: 'Love_Poetry',
+        slot: 'Love_Poetry_slot',
+        onerror: err => console.error('Custom catch:', err),
+        onready: ad => {
+            // Ad is ready to be displayed
+            // calling 'display' will display the ad
+            ad.call('display')
+            ad.on('display', () => document.getElementById("softKeysContainer").style.display = "none")
+            ad.on('close', () => {
+                document.getElementById("softKeysContainer").style.display = "block";
+            })
+        }
+    })
+});
+    </script>
+    
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="kaiads.v5.min.js"></script>
+</body>
+</html>

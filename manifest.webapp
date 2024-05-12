@@ -1,0 +1,34 @@
+{
+  "name": "My Salat",
+  "subtitle": "Stay Connected to Your Prayers",
+  "description": "Prayer is the most important task in our daily life. But we miss our prayer because of right alert in right time. Here we come up with our idea that is gonna help you to take your prayer in right time and in right direction. You can use it as a digital tasbih. If you are outside, search for your nearest mosque easily. Its an elegant and accurate App for getting prayer timings and Qibla direction, no matter where you are. Its stylish yet easy and convenient interface is designed to make sure that you are kept updated with the pray times. Features: (1) Search nearest mosques. (2) Salat time of Fajr, Shrook, Zuhr, Asr, Magrib and Isha. (3) Best Islamic tool for every Muslim to follow his daily Solat (namaz) in home or Masjid and make Doaa for us. (4) Auto Silent Mode (For users who may forget to silent mobile in Masjid) Digital magnetic Compass using your phone/tablet sensor will quickly point to the Qiblah direction. (5) Tasbih for every salat separately.",
+  "launch_path": "/index.html",
+  "icons": {
+    "16": "/icons/app_icon_16x16.png",
+    "56": "/icons/app_icon_56x56.png",
+    "48": "/icons/app_icon_48x48.png",
+    "112": "/icons/app_icon_112x112.png"
+  },
+  "developer": {
+    "name": "M Zubair Talha",
+    "url": "https://github.com/mzubairtalha"
+  },
+  "orientation": "portrait",
+  "default_locale": "en",
+  "locales": {
+    "en-US": {
+      "description": "Stay connected to your prayers with My Salat - an elegant and accurate app for getting prayer timings and Qibla direction, no matter where you are. Never miss your prayer with timely alerts and nearby mosque search."
+    }
+  },
+  "type": "privileged",
+  "permissions": {
+    "systemXHR": {
+      "description": "Required for fetching nearest mosque and map."
+    },
+    "geolocation": {
+      "description": "Required for providing offline prayer time, fetching nearest mosque and map."
+    }
+  },
+  "installs_allowed_from": ["*"],
+  "version": "1.1"
+}
