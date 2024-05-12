@@ -1,0 +1,259 @@
+/* font face start*/
+
+@font-face
+{
+    font-family: good;
+    src: url(font/Quicksand-Bold.otf);
+}
+
+@font-face
+{
+    font-family: time;
+    src: url(font/Xolonium-Bold.otf);
+}
+
+@font-face
+{
+    font-family: count;
+    src: url(font/scoreboard.ttf);
+}
+
+/* font face end*/
+.deshboard-image
+{
+    height: auto;
+    width: auto;
+    max-width: 128px;
+    max-height: 128px;
+    margin: 10px;
+}
+
+.ui-grid-a img
+{
+    height: auto;
+    width: auto;
+    max-width: 64px;
+    max-height: 64px;
+    margin: 10px; /* margin: 10px;*/
+}
+/*
+.ui-grid-a div {
+    padding: 10px;
+}*/
+
+.imgCaption
+{
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: -20px;
+    padding-top: 15px;
+    font-family: "good";
+}
+
+.title-text
+{
+    color: white;
+    font-family: "good";
+}
+
+.title-text-black
+{
+    color: black;
+    font-family: "good";
+}
+
+.list-p
+{
+    font-family: "good";
+}
+
+.popup
+{
+    width: 16px;
+    height: 16px;
+}
+
+.footer-header
+{
+    text-align: center;
+    width: 100%;
+    color: #fff0f5;
+    font-size: 14px;
+    font-family: "good";
+}
+
+.footer-header .first
+{
+    width: 32px;
+    height: 32px;
+}
+
+.footer-header p
+{
+    margin-top: -6px;
+}
+
+.divide
+{
+    border-left: 1px solid #38546d;
+    border-right: 1px solid #38546d;
+    height: 32px;
+    text-align: center;
+}
+
+.margin-prayertime
+{
+    margin-left: -40px;
+    font-family: "good";
+}
+
+.time-display
+{
+    font-family: "time";
+    font-weight: bold;
+}
+
+.compass-img
+{
+}
+
+.compass-img img
+{
+    position: absolute;
+    z-index: 1;
+    width: 90%;
+    height: 80%;
+}
+
+
+/*delete*/
+#map-page, #map_canvas
+{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+#msoquemap
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin-left: -5px;
+}
+
+iframe
+{
+    border: none;
+}
+
+#TasbeehCount
+{
+    background: transparent url(../images/TasbihBack.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+
+#btnTotal
+{
+    text-align: center;
+    width: 128px;
+    height: 128px;
+    display: table-cell;
+    vertical-align: middle;
+    disabled: true;
+}
+
+#btnTotal p
+{
+    color: #fff0f5;
+    font-size: 55px;
+    font-family: "count";
+    font-weight: bold;
+}
+
+.all-background
+{
+    background: #F6F6F6;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.ui-li-icon-right
+{
+    max-height: 40px;
+    max-width: 40px;
+    right: 10px;
+    top: .9em;
+}
+
+.ui-li-icon-left
+{
+    max-height: 40px;
+    max-width: 40px;
+    left: 10px;
+    top: .9em;
+}
+.ui-bar
+{
+    
+}
+
+#deshboard:focus,
+#btnInfo:focus,
+#Prayer:focus,
+#DeveloperInfo:focus,
+#prayerTime:focus,
+#prayerDirection:focus,
+#myPopupDiv:focus,
+#timeList:focus,
+#prayerPopup:focus,
+#prayerTimeFooter:focus,
+#dirRefresh:focus,
+#imgKibla:focus,
+#MosqueSearch:focus,
+#masjidRefresh:focus,
+#myFilter:focus,
+#maqueList:focus,
+#MosqueMap:focus,
+#mapRefresh:focus,
+#msoquemap:focus,
+#Tasbeeh:focus,
+#popupLogin:focus,
+#tasbihName:focus,
+#tasbihCount:focus,
+#tasbihSubmit:focus,
+#MyTasbih:focus,
+#myFilter1:focus,
+#tbsList:focus,
+#tasbihClickBack:focus,
+#ResetCount:focus,
+#countHeader:focus,
+#CountMe:focus,
+#btnTotal:focus,
+#countTotal:focus,
+#Div2:focus,
+#countPlus:focus,
+#countMinus:focus,
+#Settings:focus,
+#A1:focus,
+#H1:focus,
+#radio-choice-1:focus,
+#radio-choice-2:focus,
+#radio-choice-3:focus,
+#radio-choice-4:focus,
+#checkbox-1a:focus,
+#checkbox-2a:focus,
+#checkbox-3a:focus,
+#checkbox-4a:focus,
+#CacheClear:focus,
+#A2:focus {
+  outline: 2px solid yellow;
+}
